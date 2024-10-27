@@ -3,7 +3,7 @@ import contactBG from '@/assets/images/contact.png';
 
 const SubscribeContainer = () => {
   return (
-    <div className="px-4 py-32">
+    <div className="px-4 py-36">
       <section
         className="relative bg-center py-16 rounded-xl sm:mx-8 lg:mx-16 mx-auto md:px-8"
         style={{ backgroundImage: `url(${contactBG.src})` }}
@@ -25,7 +25,7 @@ const SubscribeContainer = () => {
               />
               <button
                 type="submit"
-                className="bg-green-600 text-white px-4 py-4 rounded-r-lg hover:bg-green-700 focus:outline-none"
+                className="bg-green-600 text-white px-2 py-2 rounded-r-lg hover:bg-green-700 focus:outline-none"
               >
                 Order now
               </button>
