@@ -3,7 +3,7 @@ import contactBG from '@/assets/images/contact.png';
 
 const SubscribeContainer = () => {
   return (
-    <div className="px-4 py-36">
+    <div className="px-4 py-32">
       <section
         className="relative bg-center py-16 rounded-xl sm:mx-8 lg:mx-16 mx-auto md:px-8"
         style={{ backgroundImage: `url(${contactBG.src})` }}
