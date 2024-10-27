@@ -2,26 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes slideIn {
+    0% {
+      opacity: 0; /* Start with hidden */
+      transform: translateY(30px); /* Start slightly below */
+    }
+    100% {
+      opacity: 1; /* Fully visible */
+      transform: translateY(0); /* Move to original position */
+    }
   }
+  
+  .animate-slideIn {
+    animation: slideIn 1.5s ease-out; /* Apply the animation */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+.card-container {
+  position: relative;
+  background-color: #f3f4f6; /* Gray background */
+  padding: 1rem;
+  border-radius: 20px; /* Rounded corners */
+  overflow: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.card-container::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #f3f4f6;
+  border-radius: 50% 50% 0 0; /* Rounded bottom shape */
+}
+
+
+@keyframes vibrate {
+  0% { transform: translate(0); }
+  25% { transform: translate(-4px, 0); }
+  50% { transform: translate(4px, 0); }
+  75% { transform: translate(-4px, 0); }
+  100% { transform: translate(0); }
+}
+
+.vibrate-on-hover {
+  transition: transform 0.5s; /* Transition speed */
+}
+
+.vibrate-on-hover:hover {
+  animation: vibrate 0.3s linear; /* Vibration animation */
+}
+
+
+
+.tilt-on-hover {
+  transition: transform 0.3s ease;
+  transform-origin: center; /* Tilt center se ho raha hai */
+}
+
+.tilt-on-hover:hover {
+  transform: rotate(5deg); /* Thoda ghooma raha hai */
 }
